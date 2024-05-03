@@ -1,0 +1,476 @@
+/* Define a variable*/
+:root{
+    --pink: rgb(255, 182, 236);
+}
+
+/*all tags*/
+*{
+    margin: 0; 
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;  /* takes out the underlines of links */
+    text-transform: capitalize;
+    transition: .2s linear; /*animation and adding . infront of time makes it faster*/
+}
+
+/*html*/
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem; /*define the padding area at the top of an element when it is scrolled into view.*/
+    overflow-x: hidden; /*makes the web responsive. eg. make scrollbar when notes are more than the web*/
+}
+/* headings */
+.heading{
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    background-color: var(--pink);
+    color: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+/*all sections*/
+section{
+    padding: 2rem 9%;
+}
+
+/*all buttons*/
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: var(--pink);
+    color: #ffffff;
+    padding: 2rem;
+    cursor: pointer; /*cursor turns into a hand*/
+    font-size: 1.7rem;
+}
+.btn:hover{
+    background: #ffffff;
+    color: var(--pink);
+    border: 1.5px solid black;
+}
+
+/*header section starts*/
+header{
+    position: fixed; /*fixed makes it stay visible even if user scrolls down*/
+    top: 0; left: 0; right: 0; /*pecify the position of the fixed element*/
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+header .logo{
+    font-size: 3rem;
+    color: #333;
+    font-weight: bold;
+}
+header .logo span{
+    color: var(--pink);
+}
+header .navbar a{
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #666;
+}
+header .navbar a:hover{
+    color: var(--pink);
+}
+header .icons a{
+    color: #333;
+    margin-left: 2rem;
+    font-size: 2.5rem;
+}
+header .icons a:hover{
+    color: var(--pink);
+}
+header #toggler{
+    display: none;
+}
+header .fa-bars{
+    font-size: 3rem;
+    color: #333;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+/*header section ends*/
+
+/*home section starts*/
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(images/flowerBasket.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .content{
+    max-width: 50rem;
+}
+.home .content h3{
+    font-size: 6rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+.home .content span{
+    font-size: 3.5rem;
+    color: var(--pink);
+    font-weight: bold;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+.home .content p{
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+/*home section ends*/
+
+/*about section starts*/
+.about{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.about .row{
+    width: 80%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+    overflow-x: hidden;
+}
+.about .row{
+    overflow: hidden;
+}
+.image-container img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+}
+.about .row .content p{
+    font-size: 1.7rem;
+}
+.about .row .content{
+    text-align: center;
+    width: 100%;
+}
+/*about section ends*/
+
+/*icons section starts*/
+/*all icons*/
+.icons-container{
+    display: flex;
+    background: rgb(224, 227, 224);
+    gap: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+/*all gifs*/
+.gif{
+    display: none;
+    padding-bottom: 0.25rem;
+    margin-right: 2rem;
+}
+/* all icons background and borders */
+.delivery, .refund, .gift, .payment{
+    display: flex;
+    background-color: #ffffff;
+    border: 1.5px solid black;
+    padding: 3rem;
+    align-items: center;
+    flex: 1 1 25rem;
+}
+
+/* all icons images*/
+.delivery .img-truck, .refund .cash, .gift .giftBox, .payment .credit-card{
+    margin-right: 2rem;
+}
+
+/* description */
+.info h3{
+    font-size: 2rem;
+}
+.info span{
+    font-size: 1.5rem;
+}
+
+/* image hover */
+.delivery:hover .img-truck, .refund:hover .cash, .gift:hover .giftBox, .payment:hover .credit-card{
+    display: none; /* Hide the image when the container is hovered */
+    cursor: pointer;
+}
+
+/* hover gif */
+.delivery:hover .gif, .refund:hover .gif, .gift:hover .gif, .payment:hover .gif{
+    display: block; /* Display the GIF when the container is hovered */
+    cursor: pointer;
+}
+
+/* make gif and image same size section */
+.cash, .refund:hover .gif{
+    height: 5rem;
+    padding: 1rem;
+}
+
+.delivery .img-truck{
+    margin-bottom: 0.2rem;
+}
+.gift img, .payment img{
+    height: 6rem;
+    width: 6.5rem;
+}
+/*icons section ends*/
+
+/*product section starts*/
+.products .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9rem;
+    margin-top: 4.5rem;
+    margin-bottom: 5rem;
+    justify-content: center;
+}
+.products .box-container .box{
+    box-shadow: 0 .5rem 1.5rem rgba(7, 7, 7, 0.208);
+    position: relative;
+}
+.products .box-container .box .discount{
+    position: absolute;
+    top: 1rem; left: 1rem;
+    padding: 2rem 1rem;
+    font-size: 2rem;
+    color: #ffffff;
+    background: rgba(250, 116, 127, 0.616);
+    border-radius: .5rem;
+}
+.box-container imgage{
+    position: relative;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+.products .box-container .box .image .icons{
+    position: absolute;
+    display: flex;
+    right: 0;
+    left: 0;
+}
+.products .box-container .box .image .icons a{
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    text-align: center;
+    width: 50%;
+    background: rgb(250, 116, 127);;
+    color: #ffffff;
+}
+.box-container img{
+    height: 45rem;
+}
+.products .box-container .box .image .icons a:hover{
+    transform: scale(1.1);
+}
+/* product section ends */
+
+/* review section starts */
+.review .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.review .box-container .box{
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(7, 7, 7, 0.208);
+    border-radius: .5rem;
+    padding: 3rem 2rem;
+    position: relative;
+}
+.review .box-container .box .fa-quote-right{
+    position: absolute;
+    bottom: 3rem; right: 3rem;
+    font-size: 6rem;
+    color: #eee;
+}
+.review .box-container .box p{
+    color: #999;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+}
+.review .box-container .box .stars i{
+    color: var(--pink);
+    font-size: 2rem;
+}
+.review .box-container .box .user{
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 2rem;
+}
+.review .box-container .box .user img{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+.review .box-container .box .user h3{
+    font-size: 2rem;
+    color: #333;
+}
+.review .box-container.box .user span{
+    font-size: 1.5rem;
+    color: #999;
+}
+/* review section ends */
+
+/* contact us starts*/
+.contact .row{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin-top: 5rem;
+}
+.contact .row form{
+    flex: 1 1 40rem;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(7, 7, 7, 0.208);
+    border: .1rem solid rgba(0,0,0,.1);
+    background: #ffffff;
+    border-radius: .5rem;
+    width: 100%;
+}
+.contact .row .image{
+    flex: 1 1 40rem;
+}
+.contact .row .image img{
+    width: 100%;
+    min-height: 50rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(7, 7, 7, 0.208);
+}
+.contact .row form .box{
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+    border: .1rem solid rgb(0, 0, 0);
+    border-radius: .5rem;
+    margin: .7rem 0;
+    width: 100%;
+    padding-bottom: 1.5rem;
+}
+.contact .row form .box:focus{
+    border-color: rgb(252, 96, 252);
+}
+.contact .row form textarea{
+    height: 15rem;
+    width: 60rem;
+    resize: none;
+}
+/* contact us ends */
+
+/* footer section starts */
+.footer{
+    background: rgb(224, 227, 224);
+    margin-top: 5rem;
+}
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.footer .box-container .box{
+    flex: 1 1 25rem;
+}
+.footer .box-container .box h3{
+    color: #333;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+.footer .box-container .box a{
+    display: block;
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+.footer .box-container .box a:hover{
+    color: var(--pink);
+    text-decoration: underline;
+}
+.footer .credit{
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #333;
+    border-top: .1rem solid rgba(0,0,0,.1);
+}
+/* footer section ends */
+
+/*make web responsive*/
+@media (max-width:2560px){
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 2rem;
+    }
+}
+@media (max-width:818px){
+    html{
+        font-size: 50%;
+    }
+    header .fa-bars{
+        display: block;
+    }
+    header .navbar{
+        position:absolute; /*stacked*/
+        top: 100%;left: 0;right: 0;
+        background: #eee;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);/*draws a straight line meaning the whole content is invisible*/
+    } 
+    header .navbar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: #fff;
+        border: .1rem solid rgba(0,0,0,.1);
+        display: block;
+    }
+    /* it creates a rectangular shape that covers the entire .navbar element. */
+    header #toggler:checked ~ .navbar{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    #toggler:checked ~ label.fas.fa-bars {
+        transform: rotate(90deg);
+    }
+    .about .row {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+    .image-container img {
+        height: 100%; /* Adjust height to maintain aspect ratio */
+    }
+    .contact .row .image img{
+        min-height: 60%;
+    }
+}
