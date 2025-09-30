@@ -83,7 +83,7 @@ a {
     transition: 0.7s ease;
 }
 
-/*header section starts*/
+/* header */
 header {
     position: fixed;
     top: 0;
@@ -99,6 +99,18 @@ header .l-inner {
     align-items: center;
     justify-content: space-between;
     padding: 25px 0;
+}
+
+header #toggler {
+    display: none;
+}
+
+header .fa-bars {
+    font-size: 26px;
+    color: #333;
+    border-radius: 4.4px;
+    cursor: pointer;
+    display: none;
 }
 
 header .navbar a {
@@ -129,21 +141,7 @@ header .icons a:hover {
     color: var(--pink);
 }
 
-header #toggler {
-    display: none;
-}
-
-header .fa-bars {
-    font-size: 26px;
-    color: #333;
-    border-radius: 4.4px;
-    cursor: pointer;
-    display: none;
-}
-
-/*header section ends*/
-
-/*home section starts*/
+/* home */
 .home {
     background: url('/images/flowerBasket.jpg')no-repeat center / cover;
     padding: 210px 0;
@@ -176,9 +174,7 @@ header .fa-bars {
     line-height: 1.5;
 }
 
-/*home section ends*/
-
-/*about section starts*/
+/* about us */
 .about .l-inner {
     display: flex;
     justify-content: center;
@@ -206,9 +202,7 @@ header .fa-bars {
     padding-bottom: 17px;
 }
 
-/*about section ends*/
-
-/*quality section starts*/
+/* quality section */
 .sc-quality {
     background: rgb(224, 227, 224);
 }
@@ -247,18 +241,12 @@ header .fa-bars {
     display: none;
 }
 
-.delivery:hover .img-truck,
-.refund:hover .cash,
-.gift:hover .giftBox,
-.payment:hover .credit-card {
+.icon-cont:hover img {
     display: none;
     /* Hide the image when the container is hovered */
 }
 
-.delivery:hover .gif,
-.refund:hover .gif,
-.gift:hover .gif,
-.payment:hover .gif {
+.icon-cont:hover .gif {
     display: block;
     /* Display the GIF when the container is hovered */
     cursor: pointer;
@@ -272,7 +260,7 @@ header .fa-bars {
     font-size: 13px;
 }
 
-/*product section starts*/
+/* products */
 .products .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -331,9 +319,7 @@ header .fa-bars {
     transition: 0.7s ease;
 }
 
-/* product section ends */
-
-/* review section starts */
+/* review */
 .review .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -390,9 +376,7 @@ header .fa-bars {
     color: #eee;
 }
 
-/* review section ends */
-
-/* contact us starts*/
+/* contact us */
 .contact .row {
     display: flex;
     flex-wrap: wrap;
@@ -434,9 +418,7 @@ header .fa-bars {
     object-fit: cover;
 }
 
-/* contact us ends */
-
-/* footer section starts */
+/* footer */
 footer {
     background: rgb(224, 227, 224);
     margin-top: 44px;
@@ -469,9 +451,8 @@ footer .l-inner {
     color: var(--pink);
 }
 
-/* footer section ends */
-
 @media screen and (min-width: 768px) and (max-width: 1200px) {
+
     body {
         font-size: 1.953vw;
     }
@@ -502,6 +483,11 @@ footer .l-inner {
         padding: 3.255vw 0;
     }
 
+    header .fa-bars {
+        font-size: 3.385vw;
+        border-radius: 0.573vw;
+    }
+
     header .navbar a {
         font-size: 1.953vw;
         margin-right: 1.302vw;
@@ -510,11 +496,6 @@ footer .l-inner {
     header .icons a {
         margin-right: 1.042vw;
         font-size: 2.474vw;
-    }
-
-    header .fa-bars {
-        font-size: 3.385vw;
-        border-radius: 0.573vw;
     }
 
     /* home */
@@ -635,7 +616,7 @@ footer .l-inner {
         font-size: 2.344vw;
     }
 
-    /* customer review section */
+    /* review */
     .review .box-container {
         gap: 3.255vw;
         margin: 4.557vw 0 7.943vw;
@@ -769,6 +750,25 @@ footer .l-inner {
         padding: 6.667vw 0;
     }
 
+    header .fa-bars {
+        display: block;
+        font-size: 5.333vw;
+    }
+
+    header #toggler:checked~.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    #toggler:checked~label.fas.fa-bars {
+        transform: rotate(90deg);
+        transition: 0.5s ease;
+    }
+
+    #toggler:not(:checked)~label.fas.fa-bars {
+        transform: rotate(0deg);
+        transition: 0.5s ease;
+    }
+
     header .navbar {
         position: absolute;
         top: 100%;
@@ -798,25 +798,6 @@ footer .l-inner {
         font-size: 4.267vw;
     }
 
-    header .fa-bars {
-        display: block;
-        font-size: 5.333vw;
-    }
-
-    header #toggler:checked~.navbar {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
-
-    #toggler:checked~label.fas.fa-bars {
-        transform: rotate(90deg);
-        transition: 0.5s ease;
-    }
-
-    #toggler:not(:checked)~label.fas.fa-bars {
-        transform: rotate(0deg);
-        transition: 0.5s ease;
-    }
-
     /* home */
     .home {
         padding: 32.533vw 0;
@@ -842,7 +823,7 @@ footer .l-inner {
         line-height: 1.1;
     }
 
-    /* about */
+    /* about us */
     .about .l-inner {
         padding: 18.667vw 0;
     }
